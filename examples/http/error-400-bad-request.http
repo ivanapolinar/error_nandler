@@ -1,0 +1,31 @@
+### Ejemplo de petición con error 400 (Bad Request)
+
+POST https://api.miempresa.com/api/v1/products HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "",
+  "price": -10
+}
+
+### Respuesta esperada
+
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Datos de entrada no válidos",
+    "details": [
+      { "field": "name", "message": "El nombre es obligatorio" },
+      { "field": "price", "message": "El precio debe ser mayor a 0" }
+    ]
+  },
+  "meta": {
+    "timestamp": "2025-01-01T12:00:00Z",
+    "correlationId": "11111111-2222-3333-4444-555555555555",
+    "version": "v1"
+  }
+}

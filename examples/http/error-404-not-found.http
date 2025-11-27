@@ -1,0 +1,21 @@
+### Ejemplo de petición con error 404 (Not Found)
+
+GET https://api.miempresa.com/api/v1/products/999999 HTTP/1.1
+Accept: application/json
+
+### Respuesta esperada
+
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+  "error": {
+    "code": "RESOURCE_NOT_FOUND",
+    "message": "El recurso solicitado no existe"
+  },
+  "meta": {
+    "timestamp": "2025-01-01T12:00:00Z",
+    "correlationId": "99999999-8888-7777-6666-555555555555",
+    "version": "v1"
+  }
+}

@@ -1,0 +1,21 @@
+### Ejemplo de petición con error 500 (Internal Server Error)
+
+GET https://api.miempresa.com/api/v1/products HTTP/1.1
+Accept: application/json
+
+### Respuesta esperada
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: application/json
+
+{
+  "error": {
+    "code": "INTERNAL_ERROR",
+    "message": "Ha ocurrido un error interno. Intenta más tarde."
+  },
+  "meta": {
+    "timestamp": "2025-01-01T12:00:00Z",
+    "correlationId": "12121212-3434-5656-7878-909090909090",
+    "version": "v1"
+  }
+}
